@@ -13,6 +13,10 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+/**
+ * Home component
+ * @returns 
+ */
 export default function Home() {
   return (
     <main className={styles.main}>

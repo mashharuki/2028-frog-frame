@@ -4,11 +4,11 @@ import { Board, Tile } from "@/helper";
 import { Button, Frog, TextInput } from "frog";
 import { devtools } from "frog/dev";
 // import { neynar } from 'frog/hubs'
-import { handle } from "frog/next";
-import { serveStatic } from "frog/serve-static";
 import mainStyle from "@/app/mainStyle";
 import { subStyle } from "@/app/style";
 import { neynar } from "frog/hubs";
+import { handle } from "frog/next";
+import { serveStatic } from "frog/serve-static";
 export type State = {
   board: Board;
   newGame: boolean;
@@ -16,6 +16,8 @@ export type State = {
   attempts: number;
 };
 const NEYNAR_API_KEY = process.env.NEXT_PUBLIC_NEYNAR_API_KEY || "";
+
+// Create a new Frog app
 const app = new Frog<{ State: State }>({
   assetsPath: "/",
   basePath: "/api",
@@ -84,6 +86,11 @@ const Cell = () => {
   return <span style={mainStyle.cell_tile}></span>;
 };
 
+/**
+ * TilesView component
+ * @param param0 
+ * @returns 
+ */
 const TilesView = ({ tile }: { tile: Tile }) => {
   let cssArray: React.CSSProperties[] = [];
   const tileClassName = `tile${tile.value}`;

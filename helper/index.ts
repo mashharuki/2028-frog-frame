@@ -80,6 +80,9 @@ function getRandomNumber(): number {
   return possibleValues[randomIndex];
 }
 
+/**
+ * Board class
+ */
 class Board {
   tiles: Tile[];
   cells: Tile[][];
@@ -90,6 +93,9 @@ class Board {
   deltaY: number[];
   won: boolean;
 
+  /**
+   * Constructor
+   */
   constructor() {
     this.tiles = [];
     this.cells = [];
